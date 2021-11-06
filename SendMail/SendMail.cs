@@ -11,7 +11,7 @@ namespace SendMail
     {
         [FunctionName(nameof(SendMail))]
         public static async Task Run(
-        [ServiceBusTrigger("myqueue", Connection = "ServiceBusConnection")] string message,
+        [ServiceBusTrigger("onboardinguserqueue", Connection = "ServiceBusConnection")] string message,
         [SendGrid(ApiKey = "CustomSendGridKeyAppSettingName")] IAsyncCollector<SendGridMessage> messageCollector)
         {
             var emailObject = JsonSerializer.Deserialize<Mail>(message);
