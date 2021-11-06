@@ -1,0 +1,16 @@
+{
+  "version": "2.0",
+  "extensions": {
+    "sendGrid": {
+      "from": "Azure Functions <samples@functions.com>"
+    }
+  },
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "type": "queueTrigger",
+      "name": "mymsg",
+      "queueName": "myqueue",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "sendGrid",
+      "name": "$return",
+      "direction": "out",
+      "apiKey": "SendGridAPIKeyAsAppSetting",
+      "from": "{FromEmail}",
+      "to": "{ToEmail}"
+    }
+  ]
+}
