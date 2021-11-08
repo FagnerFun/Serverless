@@ -2,8 +2,10 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using SendGrid.Helpers.Mail;
+using SendMail.MailTemplate;
 using SendMail.Model;
 using System;
+using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -24,7 +26,7 @@ namespace SendMail
 
                 var mailMessage = new SendGridMessage();
                 mailMessage.AddTo(user.Mail);
-                mailMessage.AddContent("text/html", "teste");
+                mailMessage.AddContent("text/html", string.Format(OnboardingTemplate.Mail, user.FirstName));
                 mailMessage.SetFrom(new EmailAddress("fagner.santos@dextra-sw.com", "MVP Conf"));
                 mailMessage.SetSubject($"Seja bem vindo ao MVP Conf 2021 {user.FirstName}!");
 

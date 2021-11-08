@@ -9,7 +9,7 @@ namespace ResetOnboarding
     public static class ResetOnboarding
     {
         [FunctionName(nameof(ResetOnboarding))]
-        public static async Task Run([TimerTrigger("0 */1 * * * *")]TimerInfo myTimer, ILogger log)
+        public static async Task Run([TimerTrigger("0 /3 * * *")]TimerInfo myTimer, ILogger log)
         {
             var str = Environment.GetEnvironmentVariable("ConnectionString");
             using (SqlConnection conn = new SqlConnection(str))
