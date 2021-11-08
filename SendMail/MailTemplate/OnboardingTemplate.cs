@@ -35,6 +35,11 @@ namespace SendMail.MailTemplate
                                     Ao se registrar no MVP Conf 2021 você ajudou uma instituição!.
                                 </div>
                             </div>
+                            <div class='row'>
+                                <div class='col-md-12'>
+                                    <a href='https://mvpconf2021api.azure-api.net/api/ValidateUser?id={1}'> Confirme sua conta aqui </a>
+                                </div>
+                            </div>
                         </div>
 
                     </body>
